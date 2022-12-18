@@ -3,15 +3,12 @@ import 'package:laravel_validator/helper.dart';
 import 'package:laravel_validator/rules/rule_protocol.dart';
 
 class IpAddress implements RuleProtocol {
+  @override
   final String value;
   final String? attribute;
   final String? customMessage;
-  final String extra;
-  IpAddress(
-      {required this.value,
-      this.attribute,
-      this.customMessage,
-      required this.extra});
+
+  IpAddress({required this.value, this.attribute, this.customMessage});
   @override
   String? validator() {
     RegExp exp = RegExp(
@@ -20,10 +17,13 @@ class IpAddress implements RuleProtocol {
         multiLine: false);
     if (!exp.hasMatch(value)) {
       if (customMessage == null) {
-        return buildMessage(ValidatorStrings.ip, attribute, extra);
+        return buildMessage(ValidatorStrings.ip, attribute);
       }
       return customMessage;
     }
     return null;
   }
+
+  @override
+  RuleProtocol get instance => IpAddress(value: value);
 }

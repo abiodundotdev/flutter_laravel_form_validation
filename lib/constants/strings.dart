@@ -8,6 +8,8 @@ class ValidatorStrings {
   static String same = "This field is is not the same as extra";
   static String max = "This field is cannot be more than extra characters";
   static String endWith = "This field must end with extra";
+  static String lowercase = "This field must all be lowercase";
+  static String uppercase = "This field must all be uppercase";
   static String startsWith = "This field must start with extra";
   static String contain = "This field must contains one of your words";
   static String email = "This field must be a valid email";

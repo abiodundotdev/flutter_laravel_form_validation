@@ -3,6 +3,7 @@ import 'package:laravel_validator/helper.dart';
 import 'package:laravel_validator/rules/rule_protocol.dart';
 
 class StartsWith implements RuleProtocol {
+  @override
   final String value;
   final String? attribute;
   final String? customMessage;
@@ -22,4 +23,7 @@ class StartsWith implements RuleProtocol {
     }
     return null;
   }
+
+  @override
+  RuleProtocol get instance => StartsWith(value: value, extra: extra);
 }

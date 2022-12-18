@@ -3,6 +3,7 @@ import 'package:laravel_validator/helper.dart';
 import 'package:laravel_validator/rules/rule_protocol.dart';
 
 class Between implements RuleProtocol {
+  @override
   final String value;
   final String? attribute;
   final String? customMessage;
@@ -28,4 +29,7 @@ class Between implements RuleProtocol {
     }
     return null;
   }
+
+  @override
+  RuleProtocol get instance => Between(value: value, extra: extra);
 }

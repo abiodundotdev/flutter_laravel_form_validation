@@ -2,7 +2,7 @@ import 'package:laravel_validator/validator.dart';
 
 import 'base_extension.dart';
 
-extension FormValidatorList on List<String> {
+extension FormValidatorList on List<Object> {
   ///Validate the form field
   ValidatorX validate({
     Map<String, String>? customMessages,

@@ -3,6 +3,7 @@ import 'package:laravel_validator/helper.dart';
 import 'package:laravel_validator/rules/rule_protocol.dart';
 
 class In implements RuleProtocol {
+  @override
   final String value;
   final String? attribute;
   final String? customMessage;
@@ -25,4 +26,7 @@ class In implements RuleProtocol {
     }
     return null;
   }
+
+  @override
+  RuleProtocol get instance => In(value: value, extra: extra);
 }

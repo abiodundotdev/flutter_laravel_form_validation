@@ -3,15 +3,15 @@ import 'package:laravel_validator/helper.dart';
 import 'package:laravel_validator/rules/rule_protocol.dart';
 
 class Email implements RuleProtocol {
+  @override
   final String value;
   final String? attribute;
   final String? customMessage;
-  final String extra;
-  Email(
-      {required this.value,
-      this.attribute,
-      this.customMessage,
-      required this.extra});
+  Email({
+    required this.value,
+    this.attribute,
+    this.customMessage,
+  });
   @override
   String? validator() {
     RegExp exp = RegExp(
@@ -19,10 +19,13 @@ class Email implements RuleProtocol {
         caseSensitive: false);
     if (!exp.hasMatch(value)) {
       if (customMessage == null) {
-        return buildMessage(ValidatorStrings.email, attribute, extra);
+        return buildMessage(ValidatorStrings.email, attribute);
       }
       return customMessage;
     }
     return null;
   }
+
+  @override
+  RuleProtocol get instance => Email(value: value);
 }

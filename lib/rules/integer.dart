@@ -4,6 +4,7 @@ import 'package:laravel_validator/rules/rule_protocol.dart';
 
 ///For number validation
 class Integer implements RuleProtocol {
+  @override
   final String value;
   final String? attribute;
   final String? customMessage;
@@ -19,4 +20,7 @@ class Integer implements RuleProtocol {
     }
     return null;
   }
+
+  @override
+  RuleProtocol get instance => Integer(value: value);
 }

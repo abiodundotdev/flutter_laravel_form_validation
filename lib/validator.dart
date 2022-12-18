@@ -8,14 +8,19 @@ class Valiadator {
   ///The size related validation rules.
   List<String> sizeRules = ['between', 'min', 'max', 'gt', 'lt', 'lte', 'lte'];
 
-  ///The size related validation rules.
-  List<String> stringRules = ['starts_with', 'ends_with'];
+  ///The string related validation rules.
+  List<String> stringRules = [
+    'starts_with',
+    'ends_with',
+    'lowercase',
+    'uppercase'
+  ];
 
   ///The validation rules that imply the field is required
   List<String> implicitRules = ['required'];
 
   ///The validation rules that imply the field is required
-  List<String> others = ['alpha_num', 'in', 'not_in'];
+  List<String> others = ['alpha_num', 'in', 'not_in', 'regex'];
 
   ValidatorX make(List<Object> rules,
       {String? attribute, Map<String, String>? customMessages}) {
@@ -41,6 +46,12 @@ class Valiadator {
             customMessages != null ? customMessages[rule] : null,
           );
         }
+        //  else {
+        //   final _rule = rule as RuleProtocol;
+        //   new _rule();
+        //   final instance = _rule.instance;
+        //   validationMessage = instance.validator();
+        // }
       }
       return validationMessage;
     };
@@ -146,6 +157,21 @@ class Valiadator {
       case "alpha_num":
         ruleInstance = Integer(
             value: value, attribute: attribute, customMessage: cutsomMessage);
+        break;
+      case "lowercase":
+        ruleInstance = LowerCase(
+            value: value, attribute: attribute, customMessage: cutsomMessage);
+        break;
+      case "uppercase":
+        ruleInstance = UpperCase(
+            value: value, attribute: attribute, customMessage: cutsomMessage);
+        break;
+      case "regex":
+        ruleInstance = RegEx(
+            value: value,
+            attribute: attribute,
+            customMessage: cutsomMessage,
+            extra: extra!);
         break;
       default:
         ruleInstance = Required(

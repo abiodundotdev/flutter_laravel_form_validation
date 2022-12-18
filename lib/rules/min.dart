@@ -1,8 +1,11 @@
+import 'dart:math';
+
 import 'package:laravel_validator/constants/strings.dart';
 import 'package:laravel_validator/helper.dart';
 import 'package:laravel_validator/rules/rule_protocol.dart';
 
 class Min implements RuleProtocol {
+  @override
   final String value;
   final String? attribute;
   final String? customMessage;
@@ -25,4 +28,7 @@ class Min implements RuleProtocol {
     }
     return null;
   }
+
+  @override
+  RuleProtocol get instance => Min(value: value, extra: extra);
 }

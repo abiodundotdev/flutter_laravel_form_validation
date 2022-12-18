@@ -2,19 +2,22 @@ import 'package:laravel_validator/constants/strings.dart';
 import 'package:laravel_validator/helper.dart';
 import 'package:laravel_validator/rules/rule_protocol.dart';
 
-///For number validation
-class Numeric implements RuleProtocol {
+class UpperCase implements RuleProtocol {
   @override
   final String value;
   final String? attribute;
   final String? customMessage;
-  Numeric({required this.value, this.attribute, this.customMessage});
+  UpperCase({
+    required this.value,
+    this.attribute,
+    this.customMessage,
+  });
+
   @override
   String? validator() {
-    final parsedValue = num.tryParse(value);
-    if (parsedValue == null) {
+    if (value.toUpperCase() != value) {
       if (customMessage == null) {
-        return buildMessage(ValidatorStrings.numeric, attribute);
+        return buildMessage(ValidatorStrings.uppercase, attribute);
       }
       return customMessage;
     }
@@ -22,5 +25,5 @@ class Numeric implements RuleProtocol {
   }
 
   @override
-  RuleProtocol get instance => Numeric(value: value);
+  RuleProtocol get instance => UpperCase(value: value);
 }

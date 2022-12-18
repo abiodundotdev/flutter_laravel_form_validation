@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:laravel_validator/extensions/extensions.dart';
+import 'package:laravel_validator/rules/rule_protocol.dart';
 
 void main() {
   runApp(const MyApp());
@@ -78,5 +79,24 @@ class _MyHomePageState extends State<MyHomePage> {
     if (!formState.validate()) {
       _autoValidateMode = AutovalidateMode.always;
     }
+  }
+}
+
+class UpperCase implements RuleProtocol {
+  @override
+  final String value;
+
+  UpperCase({required this.value});
+
+  @override
+  String? validator() {
+    if (value != value.toUpperCase()) return "Field be uppercase";
+    return null;
+  }
+
+  @override
+  RuleProtocol get instance {
+    print("Welcome to my own world and class");
+    return UpperCase(value: value);
   }
 }

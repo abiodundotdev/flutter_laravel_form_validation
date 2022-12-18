@@ -3,6 +3,7 @@ import 'package:laravel_validator/helper.dart';
 import 'package:laravel_validator/rules/rule_protocol.dart';
 
 class GreaterThanOrEqual implements RuleProtocol {
+  @override
   final String value;
   final String? attribute;
   final String? customMessage;
@@ -26,4 +27,7 @@ class GreaterThanOrEqual implements RuleProtocol {
     }
     return null;
   }
+
+  @override
+  RuleProtocol get instance => GreaterThanOrEqual(value: value, extra: extra);
 }
