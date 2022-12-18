@@ -1,0 +1,29 @@
+import 'package:laravel_validator/constants/strings.dart';
+import 'package:laravel_validator/helper.dart';
+import 'package:laravel_validator/rules/rule_protocol.dart';
+
+class LessThan implements RuleProtocol {
+  final String value;
+  final String? attribute;
+  final String? customMessage;
+  final String extra;
+  LessThan(
+      {required this.value,
+      this.attribute,
+      this.customMessage,
+      required this.extra});
+
+  @override
+  String? validator() {
+    final parsedValue = num.tryParse(value);
+    final parsedExtra = num.tryParse(extra);
+    if (parsedValue == null || parsedExtra == null) return "Not a valid number";
+    if (!(parsedValue < parsedExtra)) {
+      if (customMessage == null) {
+        return buildMessage(ValidatorStrings.lt, attribute, extra);
+      }
+      return customMessage;
+    }
+    return null;
+  }
+}
