@@ -52,12 +52,11 @@ class _MyHomePageState extends State<MyHomePage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               TextFormField(
-                validator: ['required', 'ends_with:45']
-                    .validate(attribute: "Username"),
+                validator: ['required', 'in:man,house,goat'].v,
               ),
               const SizedBox(height: 10),
               TextFormField(
-                validator: 'required|number'.validate(),
+                validator: 'required|max:5'.v,
               ),
               const SizedBox(height: 10),
               ElevatedButton(

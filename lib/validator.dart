@@ -1,5 +1,3 @@
-library validator;
-
 import 'package:laravel_validator/rules/rules.dart';
 import 'extensions/base_extension.dart';
 
@@ -17,7 +15,7 @@ class Valiadator {
   List<String> implicitRules = ['required'];
 
   ///The validation rules that imply the field is required
-  List<String> others = ['alpha_num'];
+  List<String> others = ['alpha_num', 'in', 'not_in'];
 
   ValidatorX make(List<Object> rules,
       {String? attribute, Map<String, String>? customMessages}) {
@@ -53,62 +51,105 @@ class Valiadator {
     late RuleProtocol ruleInstance;
     switch (rule) {
       case "required":
-        ruleInstance = Required(value: value, attribute: attribute);
+        ruleInstance = Required(
+            value: value, attribute: attribute, customMessage: cutsomMessage);
         break;
       case "starts_with":
-        ruleInstance =
-            StartsWith(value: value, extra: extra!, attribute: attribute);
+        ruleInstance = StartsWith(
+            value: value,
+            extra: extra!,
+            attribute: attribute,
+            customMessage: cutsomMessage);
         break;
       case "ends_with":
-        ruleInstance =
-            EndsWith(value: value, extra: extra!, attribute: attribute);
+        ruleInstance = EndsWith(
+            value: value,
+            extra: extra!,
+            attribute: attribute,
+            customMessage: cutsomMessage);
         break;
       case "between":
-        ruleInstance =
-            Between(value: value, extra: extra!, attribute: attribute);
+        ruleInstance = Between(
+            value: value,
+            extra: extra!,
+            attribute: attribute,
+            customMessage: cutsomMessage);
         break;
       case "max":
-        ruleInstance = Max(value: value, extra: extra!, attribute: attribute);
+        ruleInstance = Max(
+            value: value,
+            extra: extra!,
+            attribute: attribute,
+            customMessage: cutsomMessage);
         break;
       case "min":
-        ruleInstance = Min(value: value, extra: extra!, attribute: attribute);
+        ruleInstance = Min(
+            value: value,
+            extra: extra!,
+            attribute: attribute,
+            customMessage: cutsomMessage);
         break;
       case "in":
-        ruleInstance = In(value: value, extra: extra!, attribute: attribute);
+        ruleInstance = In(
+            value: value,
+            extra: extra!,
+            attribute: attribute,
+            customMessage: cutsomMessage);
         break;
       case "not_in":
-        ruleInstance = NotIn(value: value, extra: extra!, attribute: attribute);
+        ruleInstance = NotIn(
+            value: value,
+            extra: extra!,
+            attribute: attribute,
+            customMessage: cutsomMessage);
         break;
       case "gt":
-        ruleInstance =
-            GreaterThan(value: value, extra: extra!, attribute: attribute);
+        ruleInstance = GreaterThan(
+            value: value,
+            extra: extra!,
+            attribute: attribute,
+            customMessage: cutsomMessage);
         break;
       case "gte":
         ruleInstance = GreaterThanOrEqual(
-            value: value, extra: extra!, attribute: attribute);
+            value: value,
+            extra: extra!,
+            attribute: attribute,
+            customMessage: cutsomMessage);
         break;
       case "lt":
-        ruleInstance =
-            LessThan(value: value, extra: extra!, attribute: attribute);
+        ruleInstance = LessThan(
+            value: value,
+            extra: extra!,
+            attribute: attribute,
+            customMessage: cutsomMessage);
         break;
       case "lte":
-        ruleInstance =
-            LessThanOrEqual(value: value, extra: extra!, attribute: attribute);
+        ruleInstance = LessThanOrEqual(
+            value: value,
+            extra: extra!,
+            attribute: attribute,
+            customMessage: cutsomMessage);
         break;
       case "double":
-        ruleInstance = Double(value: value, attribute: attribute);
+        ruleInstance = Double(
+            value: value, attribute: attribute, customMessage: cutsomMessage);
         break;
       case "interger":
-        ruleInstance = Integer(value: value, attribute: attribute);
+        ruleInstance = Integer(
+            value: value, attribute: attribute, customMessage: cutsomMessage);
         break;
       case "numeric":
-        ruleInstance = Numeric(value: value, attribute: attribute);
+        ruleInstance = Numeric(
+            value: value, attribute: attribute, customMessage: cutsomMessage);
         break;
       case "alpha_num":
-        ruleInstance = Integer(value: value, attribute: attribute);
+        ruleInstance = Integer(
+            value: value, attribute: attribute, customMessage: cutsomMessage);
         break;
       default:
-        ruleInstance = Required(value: value, attribute: attribute);
+        ruleInstance = Required(
+            value: value, attribute: attribute, customMessage: cutsomMessage);
     }
     return ruleInstance.validator();
   }

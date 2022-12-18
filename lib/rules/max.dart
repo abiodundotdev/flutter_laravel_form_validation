@@ -19,7 +19,7 @@ class Max implements RuleProtocol {
     if (parsedExtra == null) return "Max value not a valid number";
     if (value.length > parsedExtra) {
       if (customMessage == null) {
-        return buildMessage(ValidatorStrings.max, attribute);
+        return buildMessage(ValidatorStrings.max, attribute, extra);
       }
       return customMessage;
     }

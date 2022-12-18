@@ -17,9 +17,9 @@ class Min implements RuleProtocol {
   String? validator() {
     final parsedExtra = num.tryParse(extra);
     if (parsedExtra == null) return "Max value not a valid number";
-    if (value.length > parsedExtra) {
+    if (value.length < parsedExtra) {
       if (customMessage == null) {
-        return buildMessage(ValidatorStrings.max, attribute);
+        return buildMessage(ValidatorStrings.min, attribute);
       }
       return customMessage;
     }

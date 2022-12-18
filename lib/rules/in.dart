@@ -19,7 +19,7 @@ class In implements RuleProtocol {
     final extraToList = extra.split(",");
     if (!extraToList.contains(value)) {
       if (customMessage == null) {
-        return buildMessage(ValidatorStrings.max, attribute, extra);
+        return buildMessage(ValidatorStrings.inRes, attribute, extra);
       }
       return customMessage;
     }
