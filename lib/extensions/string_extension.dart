@@ -1,6 +1,6 @@
 import 'package:flutter_laravel_form_validation/validator.dart';
 
-import 'base_extension.dart';
+import 'type_alias.dart';
 
 extension FormValidatorString on String {
   ValidatorX validate({

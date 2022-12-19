@@ -1,5 +1,5 @@
 import 'package:flutter_laravel_form_validation/rules/rules.dart';
-import 'extensions/base_extension.dart';
+import 'extensions/type_alias.dart';
 
 class Valiadator {
   ///The numeric related validation rules.
