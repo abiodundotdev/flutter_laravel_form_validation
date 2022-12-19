@@ -18,7 +18,7 @@ class EndsWith implements RuleProtocol {
   String? validator() {
     if (!value.endsWith(extra)) {
       if (customMessage == null) {
-        return buildMessage(ValidatorStrings.endWith, attribute, extra);
+        return buildMessage(ValidatorStrings.endsWith, attribute, extra);
       }
       return customMessage;
     }

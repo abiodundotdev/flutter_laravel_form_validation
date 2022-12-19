@@ -1,39 +1,65 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+A simplified dart extenstion based flutter form validation . Inspired by Laravel Validation.
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages). 
+## 🎖 Installing
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages). 
--->
+```yaml
+dependencies:
+  flutter_laravel_form_validation : ^1.0.0
+```
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+### ⚡️ Import
+```dart
+import 'package:flutter_laravel_form_validation/flutter_laravel_form_validation.dart';
+```
 
-## Features
+## 🎮 How To Use
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
-
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
+# Validation rules in a list, short form without label or custom messages
 
 ```dart
-const like = 'sample';
+    TextFormField(
+        validator: ['required','max:10','uppercase'].v,
+    ),
+```
+
+# Validation rules in a string,  short form without label or custom messages
+```dart
+    TextFormField(
+        validator: "required|max:10|uppercase".v,
+    ),
+```
+
+# Validation rules in a list with label or custom messages
+```dart
+ TextFormField(
+        validator: ['required','max:10','uppercase',].validate(attribute: 'Username',
+        customMessages: {
+            'required': "You must input your username",
+            'max': "The length must be 10",
+             'uppercase': "Only uppercase is allowed"
+            },
+    ),
+```
+
+# Validation rules in a list with label or custom messages
+```dart
+ TextFormField(
+        validator: "required|max:10|uppercase".validate(attribute: 'Username',
+        customMessages: {
+            'required': "You must input your username",
+            'max': "The length must be 10",
+             'uppercase': "Only uppercase is allowed"
+            },
+    ),
 ```
 
 ## Additional information
+Currently working on custom rules validation, was inlcuded, but lated remove flutter does not support relection, another way around this is still work in progress
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+Also, localization is a work in progress
+
+## 🐛 Bugs/Requests
+
+If you encounter any problems feel free to open an issue. If you feel the library is
+missing a feature, please raise a ticket on Github and I'll look into it.
+Pull request are also welcome.

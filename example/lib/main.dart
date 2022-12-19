@@ -54,7 +54,18 @@ class _MyHomePageState extends State<MyHomePage> {
             children: <Widget>[
               TextFormField(
                 key: const Key("username"),
-                validator: ['required'].v,
+                validator: [
+                  'required',
+                  'max:10',
+                  'uppercase',
+                ].validate(
+                  attribute: 'Username',
+                  customMessages: {
+                    'required': "You must input your username",
+                    'max': "The length must be 10",
+                    'uppercase': "Only uppercase is allowed"
+                  },
+                ),
               ),
               const SizedBox(height: 10),
               TextFormField(

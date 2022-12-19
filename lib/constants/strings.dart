@@ -1,13 +1,9 @@
-///Laravel validation syntax in dart
-
-library validator;
-
 class ValidatorStrings {
   static String required = "This field is required";
   static String min = "This field is should be at least extra characters";
   static String same = "This field is is not the same as extra";
   static String max = "This field is cannot be more than extra characters";
-  static String endWith = "This field must end with extra";
+  static String endsWith = "This field must end with extra";
   static String lowercase = "This field must all be lowercase";
   static String uppercase = "This field must all be uppercase";
   static String startsWith = "This field must start with extra";
