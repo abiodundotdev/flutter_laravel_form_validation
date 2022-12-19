@@ -36,14 +36,15 @@ class Valiadator {
       for (var rule in rules) {
         if (validationMessage != null) return validationMessage;
         if (rule is String) {
-          assert(joinedRules.contains(rule.split(":")[0]),
+          final _rule = rule.split(":")[0];
+          assert(joinedRules.contains(_rule),
               "$rule is not a defined rule kindly check for spellings or error");
           validationMessage = _validate(
-            rule.split(":")[0],
+            _rule,
             value!,
             rule.split(":").length > 1 ? rule.split(":")[1] : null,
             attribute,
-            customMessages != null ? customMessages[rule] : null,
+            customMessages != null ? customMessages[_rule] : null,
           );
         }
         //  else {
