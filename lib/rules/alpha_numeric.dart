@@ -1,24 +1,23 @@
-import 'package:laravel_validator/constants/strings.dart';
-import 'package:laravel_validator/helper.dart';
-import 'package:laravel_validator/rules/rule_protocol.dart';
+import 'package:flutter_laravel_form_validation/constants/strings.dart';
+import 'package:flutter_laravel_form_validation/helper.dart';
+import 'package:flutter_laravel_form_validation/rules/rule_protocol.dart';
 
 class AlphaNumeric implements RuleProtocol {
   @override
   final String value;
   final String? attribute;
   final String? customMessage;
-  final String extra;
-  AlphaNumeric(
-      {required this.value,
-      this.attribute,
-      this.customMessage,
-      required this.extra});
+  AlphaNumeric({
+    required this.value,
+    this.attribute,
+    this.customMessage,
+  });
   @override
   String? validator() {
-    RegExp exp = RegExp(r"^[a-zA-Z0-9]", caseSensitive: false);
+    RegExp exp = RegExp(r"^[a-zA-Z0-9]+$");
     if (!exp.hasMatch(value)) {
       if (customMessage == null) {
-        return buildMessage(ValidatorStrings.alphaNum, attribute, extra);
+        return buildMessage(ValidatorStrings.alphaNum, attribute);
       }
       return customMessage;
     }
@@ -26,5 +25,5 @@ class AlphaNumeric implements RuleProtocol {
   }
 
   @override
-  RuleProtocol get instance => AlphaNumeric(value: value, extra: extra);
+  RuleProtocol get instance => AlphaNumeric(value: value);
 }

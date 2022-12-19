@@ -1,4 +1,4 @@
-name: laravel_validator
+name: flutter_laravel_form_validation
 description: A new Flutter package project.
 version: 0.0.1
 homepage:
@@ -10,7 +10,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  inspection: ^0.0.13
 
 dev_dependencies:
   flutter_test:

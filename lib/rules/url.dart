@@ -1,24 +1,23 @@
-import 'package:laravel_validator/constants/strings.dart';
-import 'package:laravel_validator/helper.dart';
-import 'package:laravel_validator/rules/rule_protocol.dart';
+import 'package:flutter_laravel_form_validation/constants/strings.dart';
+import 'package:flutter_laravel_form_validation/helper.dart';
+import 'package:flutter_laravel_form_validation/rules/rule_protocol.dart';
 
 class URL implements RuleProtocol {
   @override
   final String value;
   final String? attribute;
   final String? customMessage;
-  final String extra;
-  URL(
-      {required this.value,
-      this.attribute,
-      this.customMessage,
-      required this.extra});
+  URL({
+    required this.value,
+    this.attribute,
+    this.customMessage,
+  });
   @override
   String? validator() {
     RegExp exp = RegExp(r"^[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,6}$");
     if (!exp.hasMatch(value)) {
       if (customMessage == null) {
-        return buildMessage(ValidatorStrings.url, attribute, extra);
+        return buildMessage(ValidatorStrings.url, attribute);
       }
       return customMessage;
     }
@@ -26,5 +25,5 @@ class URL implements RuleProtocol {
   }
 
   @override
-  RuleProtocol get instance => URL(value: value, extra: extra);
+  RuleProtocol get instance => URL(value: value);
 }

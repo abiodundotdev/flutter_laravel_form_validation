@@ -1,4 +1,4 @@
-import 'package:laravel_validator/rules/rules.dart';
+import 'package:flutter_laravel_form_validation/rules/rules.dart';
 import 'extensions/base_extension.dart';
 
 class Valiadator {
@@ -6,7 +6,7 @@ class Valiadator {
   List<String> numericRules = ['numeric', 'integer', 'double'];
 
   ///The size related validation rules.
-  List<String> sizeRules = ['between', 'min', 'max', 'gt', 'lt', 'lte', 'lte'];
+  List<String> sizeRules = ['between', 'min', 'max', 'gt', 'gte', 'lt', 'lte'];
 
   ///The string related validation rules.
   List<String> stringRules = [
@@ -20,7 +20,7 @@ class Valiadator {
   List<String> implicitRules = ['required'];
 
   ///The validation rules that imply the field is required
-  List<String> others = ['alpha_num', 'in', 'not_in', 'regex'];
+  List<String> others = ['alpha_num', 'in', 'not_in', 'regex', 'email', 'ip'];
 
   ValidatorX make(List<Object> rules,
       {String? attribute, Map<String, String>? customMessages}) {
@@ -65,6 +65,19 @@ class Valiadator {
         ruleInstance = Required(
             value: value, attribute: attribute, customMessage: cutsomMessage);
         break;
+      case "email":
+        ruleInstance = Email(
+            value: value, attribute: attribute, customMessage: cutsomMessage);
+        break;
+      case "ip":
+        ruleInstance = IpAddress(
+            value: value, attribute: attribute, customMessage: cutsomMessage);
+        break;
+      case "url":
+        ruleInstance = URL(
+            value: value, attribute: attribute, customMessage: cutsomMessage);
+        break;
+
       case "starts_with":
         ruleInstance = StartsWith(
             value: value,

@@ -29,7 +29,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  laravel_validator:
+  flutter_laravel_form_validation:
     path: ../
 
 

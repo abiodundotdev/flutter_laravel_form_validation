@@ -17,7 +17,7 @@ class ValidatorStrings {
   static String integer = "This field must be integer";
   static String double = "This field must be double";
   static String alphaNum = "This field must contains only letters and numbers";
-  static String between = "This field must be between extra and max";
+  static String between = "This field must be between extra";
   static String contains = "This field must contains one of your worlds";
   static String haveAlpha = "This field must have alpha in it";
   static String ip = "This field must be a valid IP";
@@ -26,6 +26,7 @@ class ValidatorStrings {
   static String lt = "This field must be less than extra";
   static String gt = "This field must be less than extra";
   static String lte = "This field must be less than or equal to extra";
-  static String gte = "This field must be less than or equal to extra";
+  static String gte = "This field must be greater than or equal to extra";
   static String url = "This field must be a valid url";
+  static String regex = "This field is not valid";
 }

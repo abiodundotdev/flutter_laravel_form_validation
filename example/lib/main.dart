@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:laravel_validator/extensions/extensions.dart';
-import 'package:laravel_validator/rules/rule_protocol.dart';
+import 'package:flutter_laravel_form_validation/extensions/extensions.dart';
+import 'package:flutter_laravel_form_validation/rules/rule_protocol.dart';
 
 void main() {
   runApp(const MyApp());
@@ -53,11 +53,13 @@ class _MyHomePageState extends State<MyHomePage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               TextFormField(
-                validator: ['required', 'in:man,house,goat'].v,
+                key: const Key("username"),
+                validator: ['required'].v,
               ),
               const SizedBox(height: 10),
               TextFormField(
-                validator: 'required|max:5'.v,
+                key: const Key("email"),
+                validator: 'required|email'.v,
               ),
               const SizedBox(height: 10),
               ElevatedButton(
@@ -82,6 +84,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
+///Coming soon
 class UpperCase implements RuleProtocol {
   @override
   final String value;

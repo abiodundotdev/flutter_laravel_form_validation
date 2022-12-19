@@ -62,6 +62,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_laravel_form_validation:
+    dependency: "direct main"
+    description:
+      path: ".."
+      relative: true
+    source: path
+    version: "0.0.1"
   flutter_lints:
     dependency: "direct dev"
     description:
@@ -74,20 +81,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  inspection:
-    dependency: transitive
-    description:
-      name: inspection
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.0.13"
-  laravel_validator:
-    dependency: "direct main"
-    description:
-      path: ".."
-      relative: true
-    source: path
-    version: "0.0.1"
   lints:
     dependency: transitive
     description:

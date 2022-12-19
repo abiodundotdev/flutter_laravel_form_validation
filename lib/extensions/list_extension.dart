@@ -1,4 +1,4 @@
-import 'package:laravel_validator/validator.dart';
+import 'package:flutter_laravel_form_validation/validator.dart';
 
 import 'base_extension.dart';
 

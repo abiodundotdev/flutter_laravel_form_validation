@@ -1,6 +1,6 @@
-import 'package:laravel_validator/constants/strings.dart';
-import 'package:laravel_validator/helper.dart';
-import 'package:laravel_validator/rules/rule_protocol.dart';
+import 'package:flutter_laravel_form_validation/constants/strings.dart';
+import 'package:flutter_laravel_form_validation/helper.dart';
+import 'package:flutter_laravel_form_validation/rules/rule_protocol.dart';
 
 class Same implements RuleProtocol {
   @override
