@@ -1,6 +1,6 @@
 # Flutter Laravel Form Validation
 
-A simplified dart extenstion based flutter form validation . Inspired by Laravel Validation.
+A simplified dart extension based flutter form validation . Inspired by Laravel Validation.
 
 ## 🎖 Installing
 
@@ -16,7 +16,7 @@ import 'package:flutter_laravel_form_validation/flutter_laravel_form_validation.
 
 ## 🎮 How To Use
 
-# Validation rules in a list, short form without label or custom messages
+## Validation rules in a list, short form without label or custom messages
 
 ```dart
     TextFormField(
@@ -24,14 +24,14 @@ import 'package:flutter_laravel_form_validation/flutter_laravel_form_validation.
     ),
 ```
 
-# Validation rules in a string,  short form without label or custom messages
+## Validation rules in a string,  short form without label or custom messages
 ```dart
     TextFormField(
         validator: "required|max:10|uppercase".v,
     ),
 ```
 
-# Validation rules in a list with label or custom messages
+## Validation rules in a list with label or custom messages
 ```dart
  TextFormField(
         validator: ['required','max:10','uppercase',].validate(attribute: 'Username',
@@ -43,7 +43,7 @@ import 'package:flutter_laravel_form_validation/flutter_laravel_form_validation.
     ),
 ```
 
-# Validation rules in a list with label or custom messages
+## Validation rules in a list with label or custom messages
 ```dart
  TextFormField(
         validator: "required|max:10|uppercase".validate(attribute: 'Username',
