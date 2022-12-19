@@ -20,7 +20,15 @@ class Valiadator {
   List<String> implicitRules = ['required'];
 
   ///The validation rules that imply the field is required
-  List<String> others = ['alpha_num', 'in', 'not_in', 'regex', 'email', 'ip'];
+  List<String> others = [
+    'alpha_num',
+    'in',
+    'not_in',
+    'regex',
+    'email',
+    'ip',
+    'url'
+  ];
 
   ValidatorX make(List<Object> rules,
       {String? attribute, Map<String, String>? customMessages}) {
