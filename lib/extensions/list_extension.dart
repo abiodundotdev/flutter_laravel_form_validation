@@ -3,7 +3,7 @@ import 'package:flutter_laravel_form_validation/validator.dart';
 import 'type_alias.dart';
 
 extension FormValidatorList on List<Object> {
-  ///Validate the form field
+  ///Validation rules in a list with label or custom messages
   ValidatorX validate({
     Map<String, String>? customMessages,
     String? attribute,
@@ -13,7 +13,7 @@ extension FormValidatorList on List<Object> {
         .make(this, attribute: attribute, customMessages: customMessages);
   }
 
-  ///Short for of validate
+  ///Validation rules in a list, short form without label or custom messages
   ValidatorX get v {
     assert(isNotEmpty, "Validator cannot be called on an empty string");
     return Valiadator().make(this);
