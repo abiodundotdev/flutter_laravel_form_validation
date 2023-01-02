@@ -80,14 +80,12 @@ import 'package:flutter_laravel_form_validation/flutter_laravel_form_validation.
             <td>For making a form field required</td>
             <td>['required'] or  'required' or [FLValidator.required]</td>
         </tr>
-
          <tr>
             <td><code>FLValidator.required</code></td>
             <td>required</td>
             <td>For making a form field required</td>
             <td>['required'] or  'required' or [FLValidator.required]</td>
         </tr>
-       
     </tbody>
   </table>
 
