@@ -2,9 +2,9 @@ import 'package:flutter_laravel_form_validation/validator.dart';
 
 import 'type_alias.dart';
 
-extension FormValidatorString on String {
+extension FormtryValidateString on String {
   ///Validation rules in a string with label or custom messages
-  ValidatorX validate({
+  tryValidateX validate({
     Map<String, String>? customMessages,
     String? attribute,
   }) {
@@ -14,8 +14,8 @@ extension FormValidatorString on String {
   }
 
   ///Validation rules in a string, short form without label or custom messages
-  ValidatorX get v {
-    assert(isNotEmpty, "Validator cannot be called on an empty string");
+  tryValidateX get v {
+    assert(isNotEmpty, "tryValidate cannot be called on an empty string");
     return Valiadator().make(split("|"));
   }
 }

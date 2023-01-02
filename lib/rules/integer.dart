@@ -10,11 +10,11 @@ class Integer implements RuleProtocol {
   final String? customMessage;
   Integer({required this.value, this.attribute, this.customMessage});
   @override
-  String? validator() {
+  String? tryValidate() {
     final parsedValue = double.tryParse(value);
     if (parsedValue == null) {
       if (customMessage == null) {
-        return buildMessage(ValidatorStrings.integer, attribute);
+        return buildMessage(tryValidateStrings.integer, attribute);
       }
       return customMessage;
     }

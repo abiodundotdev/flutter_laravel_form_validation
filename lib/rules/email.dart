@@ -13,13 +13,13 @@ class Email implements RuleProtocol {
     this.customMessage,
   });
   @override
-  String? validator() {
+  String? tryValidate() {
     RegExp exp = RegExp(
         r"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$",
         caseSensitive: false);
     if (!exp.hasMatch(value)) {
       if (customMessage == null) {
-        return buildMessage(ValidatorStrings.email, attribute);
+        return buildMessage(tryValidateStrings.email, attribute);
       }
       return customMessage;
     }

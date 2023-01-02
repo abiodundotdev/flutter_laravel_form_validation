@@ -15,10 +15,10 @@ class EndsWith implements RuleProtocol {
       required this.extra});
 
   @override
-  String? validator() {
+  String? tryValidate() {
     if (!value.endsWith(extra)) {
       if (customMessage == null) {
-        return buildMessage(ValidatorStrings.endsWith, attribute, extra);
+        return buildMessage(tryValidateStrings.endsWith, attribute, extra);
       }
       return customMessage;
     }

@@ -1,4 +1,4 @@
-class ValidatorStrings {
+class tryValidateStrings {
   static String required = "This field is required";
   static String min = "This field is should be at least extra characters";
   static String same = "This field is is not the same as extra";

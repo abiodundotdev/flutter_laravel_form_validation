@@ -15,12 +15,12 @@ class Max implements RuleProtocol {
       required this.extra});
 
   @override
-  String? validator() {
+  String? tryValidate() {
     final parsedExtra = num.tryParse(extra);
     if (parsedExtra == null) return "Max value not a valid number";
     if (value.length > parsedExtra) {
       if (customMessage == null) {
-        return buildMessage(ValidatorStrings.max, attribute, extra);
+        return buildMessage(tryValidateStrings.max, attribute, extra);
       }
       return customMessage;
     }

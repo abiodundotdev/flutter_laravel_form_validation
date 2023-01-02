@@ -17,12 +17,12 @@ class Min implements RuleProtocol {
       required this.extra});
 
   @override
-  String? validator() {
+  String? tryValidate() {
     final parsedExtra = num.tryParse(extra);
     if (parsedExtra == null) return "Max value not a valid number";
     if (value.length < parsedExtra) {
       if (customMessage == null) {
-        return buildMessage(ValidatorStrings.min, attribute);
+        return buildMessage(tryValidateStrings.min, attribute);
       }
       return customMessage;
     }

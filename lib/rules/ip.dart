@@ -10,14 +10,14 @@ class IpAddress implements RuleProtocol {
 
   IpAddress({required this.value, this.attribute, this.customMessage});
   @override
-  String? validator() {
+  String? tryValidate() {
     RegExp exp = RegExp(
         r"^(?!0)(?!.*\.$)((1?\d?\d|25[0-5]|2[0-4]\d)(\.|$)){4}$",
         caseSensitive: false,
         multiLine: false);
     if (!exp.hasMatch(value)) {
       if (customMessage == null) {
-        return buildMessage(ValidatorStrings.ip, attribute);
+        return buildMessage(tryValidateStrings.ip, attribute);
       }
       return customMessage;
     }

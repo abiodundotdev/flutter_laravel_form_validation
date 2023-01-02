@@ -20,21 +20,29 @@ import 'package:flutter_laravel_form_validation/flutter_laravel_form_validation.
 
 ```dart
     TextFormField(
-        validator: ['required','max:10','uppercase'].v,
+        tryValidate: ['required','max:10','uppercase'].v,
+    ),
+```
+
+## Validation rules in a list using the FLValidator class, short form without label or custom messages
+
+```dart
+    TextFormField(
+        tryValidate: [FLValidator.required,FLValidator.max(10),FLValidator.uppercase].v,
     ),
 ```
 
 ## Validation rules in a string,  short form without label or custom messages
 ```dart
     TextFormField(
-        validator: "required|max:10|uppercase".v,
+        tryValidate: "required|max:10|uppercase".v,
     ),
 ```
 
 ## Validation rules in a list with label or custom messages
 ```dart
  TextFormField(
-        validator: ['required','max:10','uppercase',].validate(attribute: 'Username',
+        tryValidate: ['required','max:10','uppercase',].validate(attribute: 'Username',
         customMessages: {
             'required': "You must input your username",
             'max': "The length must be 10",
@@ -46,7 +54,7 @@ import 'package:flutter_laravel_form_validation/flutter_laravel_form_validation.
 ## Validation rules in a list with label or custom messages
 ```dart
  TextFormField(
-        validator: "required|max:10|uppercase".validate(attribute: 'Username',
+        tryValidate: "required|max:10|uppercase".validate(attribute: 'Username',
         customMessages: {
             'required': "You must input your username",
             'max': "The length must be 10",
@@ -54,6 +62,34 @@ import 'package:flutter_laravel_form_validation/flutter_laravel_form_validation.
             },
     ),
 ```
+## Rules
+
+ <table>
+    <thead>
+      <tr>
+        <th>Class property</th>
+        <th>String </th>
+        <th>Description</th>
+        <th>Example</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>FLValidator.required</code></td>
+            <td>required</td>
+            <td>For making a form field required</td>
+            <td>['required'] or  'required' or [FLValidator.required]</td>
+        </tr>
+
+         <tr>
+            <td><code>FLValidator.required</code></td>
+            <td>required</td>
+            <td>For making a form field required</td>
+            <td>['required'] or  'required' or [FLValidator.required]</td>
+        </tr>
+       
+    </tbody>
+  </table>
 
 ## Additional information
 Currently working on custom rules validation, was inlcuded, but later remove flutter does not support relection, another way around this is still work in progress

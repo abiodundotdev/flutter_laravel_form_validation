@@ -1,1 +1,1 @@
-typedef ValidatorX = String? Function(String?)?;
+typedef tryValidateX = String? Function(String?)?;

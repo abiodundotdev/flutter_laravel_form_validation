@@ -15,12 +15,12 @@ class NotIn implements RuleProtocol {
       required this.extra});
 
   @override
-  String? validator() {
+  String? tryValidate() {
     assert(extra.isNotEmpty, "Values to check from is required");
     final extraToList = extra.split(",");
     if (extraToList.contains(value)) {
       if (customMessage == null) {
-        return buildMessage(ValidatorStrings.notIn, attribute);
+        return buildMessage(tryValidateStrings.notIn, attribute);
       }
       return customMessage;
     }

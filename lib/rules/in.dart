@@ -15,12 +15,12 @@ class In implements RuleProtocol {
       required this.extra});
 
   @override
-  String? validator() {
+  String? tryValidate() {
     assert(extra.isNotEmpty, "Values to check from is required");
     final extraToList = extra.split(",");
     if (!extraToList.contains(value)) {
       if (customMessage == null) {
-        return buildMessage(ValidatorStrings.inRes, attribute, extra);
+        return buildMessage(tryValidateStrings.inRes, attribute, extra);
       }
       return customMessage;
     }

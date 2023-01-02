@@ -10,11 +10,11 @@ class Double implements RuleProtocol {
   final String? customMessage;
   Double({required this.value, this.attribute, this.customMessage});
   @override
-  String? validator() {
+  String? tryValidate() {
     final parsedValue = double.tryParse(value);
     if (parsedValue == null) {
       if (customMessage == null) {
-        return buildMessage(ValidatorStrings.double, attribute);
+        return buildMessage(tryValidateStrings.double, attribute);
       }
       return customMessage;
     }

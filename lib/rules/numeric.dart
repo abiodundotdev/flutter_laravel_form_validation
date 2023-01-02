@@ -10,11 +10,11 @@ class Numeric implements RuleProtocol {
   final String? customMessage;
   Numeric({required this.value, this.attribute, this.customMessage});
   @override
-  String? validator() {
+  String? tryValidate() {
     final parsedValue = num.tryParse(value);
     if (parsedValue == null) {
       if (customMessage == null) {
-        return buildMessage(ValidatorStrings.numeric, attribute);
+        return buildMessage(tryValidateStrings.numeric, attribute);
       }
       return customMessage;
     }

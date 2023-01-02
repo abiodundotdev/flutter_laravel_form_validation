@@ -15,13 +15,13 @@ class GreaterThanOrEqual implements RuleProtocol {
       required this.extra});
 
   @override
-  String? validator() {
+  String? tryValidate() {
     final parsedValue = num.tryParse(value);
     final parsedExtra = num.tryParse(extra);
     if (parsedValue == null || parsedExtra == null) return "Not a valid number";
     if (!(parsedValue >= parsedExtra)) {
       if (customMessage == null) {
-        return buildMessage(ValidatorStrings.gte, attribute, extra);
+        return buildMessage(tryValidateStrings.gte, attribute, extra);
       }
       return customMessage;
     }

@@ -30,7 +30,7 @@ class Valiadator {
     'url'
   ];
 
-  ValidatorX make(List<Object> rules,
+  tryValidateX make(List<Object> rules,
       {String? attribute, Map<String, String>? customMessages}) {
     final joinedRules = [
       ...numericRules,
@@ -59,7 +59,7 @@ class Valiadator {
         //   final _rule = rule as RuleProtocol;
         //   new _rule();
         //   final instance = _rule.instance;
-        //   validationMessage = instance.validator();
+        //   validationMessage = instance.tryValidate();
         // }
       }
       return validationMessage;
@@ -199,6 +199,6 @@ class Valiadator {
         ruleInstance = Required(
             value: value, attribute: attribute, customMessage: cutsomMessage);
     }
-    return ruleInstance.validator();
+    return ruleInstance.tryValidate();
   }
 }

@@ -14,10 +14,10 @@ class UpperCase implements RuleProtocol {
   });
 
   @override
-  String? validator() {
+  String? tryValidate() {
     if (value.toUpperCase() != value) {
       if (customMessage == null) {
-        return buildMessage(ValidatorStrings.uppercase, attribute);
+        return buildMessage(tryValidateStrings.uppercase, attribute);
       }
       return customMessage;
     }

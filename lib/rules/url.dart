@@ -13,11 +13,11 @@ class URL implements RuleProtocol {
     this.customMessage,
   });
   @override
-  String? validator() {
+  String? tryValidate() {
     RegExp exp = RegExp(r"^[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,6}$");
     if (!exp.hasMatch(value)) {
       if (customMessage == null) {
-        return buildMessage(ValidatorStrings.url, attribute);
+        return buildMessage(tryValidateStrings.url, attribute);
       }
       return customMessage;
     }

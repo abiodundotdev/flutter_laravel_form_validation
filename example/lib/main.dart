@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_laravel_form_validation/extensions/extensions.dart';
+import 'package:flutter_laravel_form_validation/flutter_laravel_form_validation.dart';
 import 'package:flutter_laravel_form_validation/rules/rule_protocol.dart';
 
 void main() {
@@ -55,17 +56,11 @@ class _MyHomePageState extends State<MyHomePage> {
               TextFormField(
                 key: const Key("username"),
                 validator: [
-                  'required',
-                  'max:10',
-                  'uppercase',
-                ].validate(
-                  attribute: 'Username',
-                  customMessages: {
-                    'required': "You must input your username",
-                    'max': "The length must be 10",
-                    'uppercase': "Only uppercase is allowed"
-                  },
-                ),
+                  FLValidator.required,
+                  FLValidator.max(10),
+                  FLValidator.email,
+                  FLValidator.uppercase
+                ].v,
               ),
               const SizedBox(height: 10),
               TextFormField(
@@ -103,7 +98,7 @@ class UpperCase implements RuleProtocol {
   UpperCase({required this.value});
 
   @override
-  String? validator() {
+  String? tryValidate() {
     if (value != value.toUpperCase()) return "Field be uppercase";
     return null;
   }

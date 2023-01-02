@@ -14,10 +14,10 @@ class StartsWith implements RuleProtocol {
       this.customMessage,
       required this.extra});
   @override
-  String? validator() {
+  String? tryValidate() {
     if (!value.startsWith(extra)) {
       if (customMessage == null) {
-        return buildMessage(ValidatorStrings.startsWith, attribute, extra);
+        return buildMessage(tryValidateStrings.startsWith, attribute, extra);
       }
       return customMessage;
     }

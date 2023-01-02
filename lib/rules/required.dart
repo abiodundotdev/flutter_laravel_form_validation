@@ -9,10 +9,10 @@ class Required implements RuleProtocol {
   final String? customMessage;
   Required({required this.value, this.attribute, this.customMessage});
   @override
-  String? validator() {
+  String? tryValidate() {
     if (value.isEmpty) {
       if (customMessage == null) {
-        return buildMessage(ValidatorStrings.required, attribute);
+        return buildMessage(tryValidateStrings.required, attribute);
       }
       return customMessage;
     }

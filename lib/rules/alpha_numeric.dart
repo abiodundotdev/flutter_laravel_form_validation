@@ -13,11 +13,11 @@ class AlphaNumeric implements RuleProtocol {
     this.customMessage,
   });
   @override
-  String? validator() {
+  String? tryValidate() {
     RegExp exp = RegExp(r"^[a-zA-Z0-9]+$");
     if (!exp.hasMatch(value)) {
       if (customMessage == null) {
-        return buildMessage(ValidatorStrings.alphaNum, attribute);
+        return buildMessage(tryValidateStrings.alphaNum, attribute);
       }
       return customMessage;
     }

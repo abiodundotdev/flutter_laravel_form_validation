@@ -14,10 +14,10 @@ class Same implements RuleProtocol {
       this.customMessage,
       required this.extra});
   @override
-  String? validator() {
+  String? tryValidate() {
     if (value != extra) {
       if (customMessage == null) {
-        return buildMessage(ValidatorStrings.same, attribute, extra);
+        return buildMessage(tryValidateStrings.same, attribute, extra);
       }
       return customMessage;
     }

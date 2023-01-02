@@ -14,11 +14,11 @@ class RegEx implements RuleProtocol {
       this.customMessage,
       required this.extra});
   @override
-  String? validator() {
+  String? tryValidate() {
     RegExp exp = RegExp(extra);
     if (!exp.hasMatch(value)) {
       if (customMessage == null) {
-        return buildMessage(ValidatorStrings.regex, attribute, extra);
+        return buildMessage(tryValidateStrings.regex, attribute, extra);
       }
       return customMessage;
     }

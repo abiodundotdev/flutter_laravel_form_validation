@@ -3,7 +3,7 @@ abstract class RuleProtocol {
   RuleProtocol({required this.value});
 
   ///Validates the form field value
-  String? validator();
+  String? tryValidate();
 
   RuleProtocol get instance;
 }
