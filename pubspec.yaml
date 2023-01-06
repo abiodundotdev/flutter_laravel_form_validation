@@ -1,7 +1,7 @@
 name: flutter_laravel_form_validation
-description: A new Flutter package project.
+description: A simplified dart extension based flutter form validation . Inspired by Laravel Validation.
 version: 1.0.0
-homepage: 
+homepage: https://github.com/abiodundotdev/flutter_laravel_form_validation
 
 environment:
   sdk: ">=2.16.1 <3.0.0"
