@@ -68,6 +68,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 validator: 'required|email'.v,
               ),
               const SizedBox(height: 10),
+              TextFormField(
+                key: const Key("fullname"),
+                validator: ['required', 'uppercase'].v,
+              ),
+              const SizedBox(height: 10),
               ElevatedButton(
                 onPressed: handleSubmit,
                 child: Text("Submit"),

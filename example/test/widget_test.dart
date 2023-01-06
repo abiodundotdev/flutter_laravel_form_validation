@@ -14,10 +14,12 @@ void main() {
   group("Test for widget", () {
     late Finder usernameField;
     late Finder emailField;
+    late Finder fullNameField;
     late Finder submitBtn;
 
     setUp(() {
       usernameField = find.byKey(const Key("username"));
+      fullNameField = find.byKey(const Key("fullname"));
       emailField = find.byKey(const Key("email"));
       submitBtn = find.byType(ElevatedButton);
     });
@@ -26,15 +28,17 @@ void main() {
       await tester.pumpWidget(const MyApp());
 
       expect(usernameField, findsOneWidget);
+      expect(fullNameField, findsOneWidget);
       expect(emailField, findsOneWidget);
       expect(submitBtn, findsOneWidget);
 
       await tester.enterText(usernameField, "");
       await tester.enterText(emailField, "");
+      await tester.enterText(fullNameField, "");
       await tester.tap(submitBtn);
       await tester.pump();
 
-      expect(find.text('This field is required'), findsNWidgets(2));
+      expect(find.text('This field is required'), findsNWidgets(3));
     });
   });
 }
