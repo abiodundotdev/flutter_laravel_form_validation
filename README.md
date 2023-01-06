@@ -210,7 +210,7 @@ import 'package:flutter_laravel_form_validation/flutter_laravel_form_validation.
   </table>
 
 ## Additional information
-Currently working on custom rules validation, was inlcuded, but later remove flutter does not support relection, another way around this is still work in progress
+Currently working on custom rules validation, was inlcuded, but later remove flutter does not support dart reflection, another way around this is still a work in progress
 
 Also, localization is a work in progress
 
