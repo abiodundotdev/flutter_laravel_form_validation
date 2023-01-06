@@ -77,43 +77,43 @@ import 'package:flutter_laravel_form_validation/flutter_laravel_form_validation.
         <tr>
             <td><code>FLValidator.required</code></td>
             <td>required</td>
-            <td>For validating a form field value required</td>
+            <td>For making sure a form field value is required</td>
             <td>['required'] or  'required' or [FLValidator.required]</td>
         </tr>
           <tr>
             <td><code>FLValidator.numeric</code></td>
             <td>numeric</td>
-            <td>For validating a form field value numeric</td>
+            <td>For making sure a form field value is numeric</td>
             <td>['numeric'] or  'numeric' or [FLValidator.numeric]</td>
         </tr>
          <tr>
             <td><code>FLValidator.integer</code></td>
             <td>interger</td>
-            <td>For validating a form field value an interger</td>
+            <td>For making sure a form field value is an interger</td>
             <td>['interger'] or  'interger' or [FLValidator.interger]</td>
         </tr>
         <tr>
             <td><code>FLValidator.double</code></td>
             <td>double</td>
-            <td>For validating a form field value a double</td>
+            <td>For making sure a form field value is a double</td>
             <td>['double'] or  'double' or [FLValidator.double]</td>
         </tr>
         <tr>
             <td><code>FLValidator.between(min,max)</code></td>
             <td>between(min,max)</td>
-            <td>For validating a form field value between the of min and max</td>
+            <td>For making sure a form field value is between the of min and max</td>
             <td>['between:2,8'] or  'between(2,8)' or [FLValidator.between(2,8)</td>
         </tr>
          <tr>
             <td><code>FLValidator.max(length)</code></td>
             <td>max:length</td>
-            <td>For validating a form field value length limited to the max length </td>
+            <td>For making sure a form field value length is limited to the max length </td>
             <td>['max:5'] or  'max:5' or [FLValidator.max(5)</td>
         </tr>
          <tr>
             <td><code>FLValidator.min(length)</code></td>
             <td>min:length</td>
-            <td>For validating a form field value length limited to the min length </td>
+            <td>For making sure a form field value length is limited to the min length </td>
             <td>['min:5'] or  'min:5' or [FLValidator.min(5)</td>
         </tr>
         <tr>
