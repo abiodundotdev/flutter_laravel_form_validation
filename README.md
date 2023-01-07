@@ -20,7 +20,7 @@ import 'package:flutter_laravel_form_validation/flutter_laravel_form_validation.
 
 ```dart
     TextFormField(
-        tryValidate: ['required','max:10','uppercase'].v,
+        validator : ['required','max:10','uppercase'].v,
     ),
 ```
 
@@ -28,14 +28,14 @@ import 'package:flutter_laravel_form_validation/flutter_laravel_form_validation.
 
 ```dart
     TextFormField(
-        tryValidate: [FLValidator.required,FLValidator.max(10),FLValidator.uppercase].v,
+        validator : [FLValidator.required,FLValidator.max(10),FLValidator.uppercase].v,
     ),
 ```
 
 ## Validation rules in a string,  short form without label or custom messages
 ```dart
     TextFormField(
-        tryValidate: "required|max:10|uppercase".v,
+        validator : "required|max:10|uppercase".v,
     ),
 ```
 
