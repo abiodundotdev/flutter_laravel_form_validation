@@ -40,6 +40,8 @@ class Valiadator {
       ...others
     ];
     return (String? value) {
+      assert(rules.contains("required"),
+          "You cannot validate a field that is not required. You can include the required rule in your list of rules for validation to work");
       String? validationMessage;
       for (var rule in rules) {
         if (validationMessage != null) return validationMessage;
