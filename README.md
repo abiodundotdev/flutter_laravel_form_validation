@@ -42,7 +42,7 @@ import 'package:flutter_laravel_form_validation/flutter_laravel_form_validation.
 ## Validation rules in a list with label or custom messages
 ```dart
  TextFormField(
-        tryValidate: ['required','max:10','uppercase',].validate(attribute: 'Username',
+        validator : ['required','max:10','uppercase',].validate(attribute: 'Username',
         customMessages: {
             'required': "You must input your username",
             'max': "The length must be 10",
@@ -54,7 +54,7 @@ import 'package:flutter_laravel_form_validation/flutter_laravel_form_validation.
 ## Validation rules in a list with label or custom messages
 ```dart
  TextFormField(
-        tryValidate: "required|max:10|uppercase".validate(attribute: 'Username',
+        validator : "required|max:10|uppercase".validate(attribute: 'Username',
         customMessages: {
             'required': "You must input your username",
             'max': "The length must be 10",
