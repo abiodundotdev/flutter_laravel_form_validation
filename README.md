@@ -165,7 +165,7 @@ import 'package:flutter_laravel_form_validation/flutter_laravel_form_validation.
             <td>['ends_with:man'] or  'ends_with:man' or FLValidator.endsWith(man)</td>
         </tr>
           <tr>
-            <td><code>FLValidator.same(value)</code></td>
+            <td><code>FLValidator.same(other)</code></td>
             <td>same:other</td>
             <td>For making sure a form field value is same as <code>other<code></td>
             <td>['same:other'] or  'same:other' or FLValidator.same(other)</td>
