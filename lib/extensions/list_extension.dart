@@ -4,18 +4,18 @@ import 'type_alias.dart';
 
 extension FormtryValidateList on List<Object> {
   ///Validation rules in a list with label or custom messages
-  tryValidateX validate({
+  ValidatorX validate({
     Map<String, String>? customMessages,
     String? attribute,
   }) {
-    assert(isNotEmpty, "tryValidate cannot be called on an empty string");
+    assert(isNotEmpty, "validate cannot be called on an empty string");
     return Valiadator()
         .make(this, attribute: attribute, customMessages: customMessages);
   }
 
   ///Validation rules in a list, short form without label or custom messages
-  tryValidateX get v {
-    assert(isNotEmpty, "tryValidate cannot be called on an empty string");
+  ValidatorX get v {
+    assert(isNotEmpty, "validate cannot be called on an empty string");
     return Valiadator().make(this);
   }
 }

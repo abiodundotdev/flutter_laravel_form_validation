@@ -17,7 +17,7 @@ class UpperCase implements RuleProtocol {
   String? tryValidate() {
     if (value.toUpperCase() != value) {
       if (customMessage == null) {
-        return buildMessage(tryValidateStrings.uppercase, attribute);
+        return buildMessage(ValidatorStrings.uppercase, attribute);
       }
       return customMessage;
     }

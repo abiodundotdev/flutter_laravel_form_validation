@@ -20,7 +20,7 @@ class NotIn implements RuleProtocol {
     final extraToList = extra.split(",");
     if (extraToList.contains(value)) {
       if (customMessage == null) {
-        return buildMessage(tryValidateStrings.notIn, attribute);
+        return buildMessage(ValidatorStrings.notIn, attribute);
       }
       return customMessage;
     }

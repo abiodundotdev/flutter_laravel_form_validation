@@ -14,7 +14,7 @@ class Numeric implements RuleProtocol {
     final parsedValue = num.tryParse(value);
     if (parsedValue == null) {
       if (customMessage == null) {
-        return buildMessage(tryValidateStrings.numeric, attribute);
+        return buildMessage(ValidatorStrings.numeric, attribute);
       }
       return customMessage;
     }

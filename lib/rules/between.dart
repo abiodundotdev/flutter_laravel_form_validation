@@ -23,7 +23,7 @@ class Between implements RuleProtocol {
     final max = int.parse(splitedExtra[1]);
     if (!((parsedValue >= min) && (parsedValue >= max))) {
       if (customMessage == null) {
-        return buildMessage(tryValidateStrings.between, attribute, extra);
+        return buildMessage(ValidatorStrings.between, attribute, extra);
       }
       return customMessage;
     }

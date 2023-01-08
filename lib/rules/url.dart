@@ -17,7 +17,7 @@ class URL implements RuleProtocol {
     RegExp exp = RegExp(r"^[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,6}$");
     if (!exp.hasMatch(value)) {
       if (customMessage == null) {
-        return buildMessage(tryValidateStrings.url, attribute);
+        return buildMessage(ValidatorStrings.url, attribute);
       }
       return customMessage;
     }

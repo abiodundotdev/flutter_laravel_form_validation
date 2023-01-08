@@ -21,7 +21,7 @@ class LessThanOrEqual implements RuleProtocol {
     if (parsedValue == null || parsedExtra == null) return "Not a valid number";
     if (!(parsedValue <= parsedExtra)) {
       if (customMessage == null) {
-        return buildMessage(tryValidateStrings.lte, attribute, extra);
+        return buildMessage(ValidatorStrings.lte, attribute, extra);
       }
       return customMessage;
     }

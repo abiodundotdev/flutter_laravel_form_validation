@@ -17,7 +17,7 @@ class Same implements RuleProtocol {
   String? tryValidate() {
     if (value != extra) {
       if (customMessage == null) {
-        return buildMessage(tryValidateStrings.same, attribute, extra);
+        return buildMessage(ValidatorStrings.same, attribute, extra);
       }
       return customMessage;
     }

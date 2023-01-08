@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter_laravel_form_validation/constants/strings.dart';
 import 'package:flutter_laravel_form_validation/helper.dart';
 import 'package:flutter_laravel_form_validation/rules/rule_protocol.dart';
@@ -22,7 +20,7 @@ class Min implements RuleProtocol {
     if (parsedExtra == null) return "Max value not a valid number";
     if (value.length < parsedExtra) {
       if (customMessage == null) {
-        return buildMessage(tryValidateStrings.min, attribute);
+        return buildMessage(ValidatorStrings.min, attribute);
       }
       return customMessage;
     }

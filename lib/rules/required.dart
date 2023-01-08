@@ -12,7 +12,7 @@ class Required implements RuleProtocol {
   String? tryValidate() {
     if (value.isEmpty) {
       if (customMessage == null) {
-        return buildMessage(tryValidateStrings.required, attribute);
+        return buildMessage(ValidatorStrings.required, attribute);
       }
       return customMessage;
     }

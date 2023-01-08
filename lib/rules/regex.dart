@@ -18,7 +18,7 @@ class RegEx implements RuleProtocol {
     RegExp exp = RegExp(extra);
     if (!exp.hasMatch(value)) {
       if (customMessage == null) {
-        return buildMessage(tryValidateStrings.regex, attribute, extra);
+        return buildMessage(ValidatorStrings.regex, attribute, extra);
       }
       return customMessage;
     }

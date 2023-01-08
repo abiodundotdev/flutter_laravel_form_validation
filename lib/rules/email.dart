@@ -19,7 +19,7 @@ class Email implements RuleProtocol {
         caseSensitive: false);
     if (!exp.hasMatch(value)) {
       if (customMessage == null) {
-        return buildMessage(tryValidateStrings.email, attribute);
+        return buildMessage(ValidatorStrings.email, attribute);
       }
       return customMessage;
     }

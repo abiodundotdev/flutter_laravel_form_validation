@@ -14,7 +14,7 @@ class Integer implements RuleProtocol {
     final parsedValue = double.tryParse(value);
     if (parsedValue == null) {
       if (customMessage == null) {
-        return buildMessage(tryValidateStrings.integer, attribute);
+        return buildMessage(ValidatorStrings.integer, attribute);
       }
       return customMessage;
     }

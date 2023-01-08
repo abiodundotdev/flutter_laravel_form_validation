@@ -14,7 +14,7 @@ class Double implements RuleProtocol {
     final parsedValue = double.tryParse(value);
     if (parsedValue == null) {
       if (customMessage == null) {
-        return buildMessage(tryValidateStrings.double, attribute);
+        return buildMessage(ValidatorStrings.double, attribute);
       }
       return customMessage;
     }

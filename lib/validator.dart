@@ -13,7 +13,8 @@ class Valiadator {
     'starts_with',
     'ends_with',
     'lowercase',
-    'uppercase'
+    'uppercase',
+    'same'
   ];
 
   ///The validation rules that imply the field is required
@@ -30,7 +31,7 @@ class Valiadator {
     'url'
   ];
 
-  tryValidateX make(List<Object> rules,
+  ValidatorX make(List<Object> rules,
       {String? attribute, Map<String, String>? customMessages}) {
     final joinedRules = [
       ...numericRules,
@@ -91,6 +92,13 @@ class Valiadator {
 
       case "starts_with":
         ruleInstance = StartsWith(
+            value: value,
+            extra: extra!,
+            attribute: attribute,
+            customMessage: cutsomMessage);
+        break;
+      case "same":
+        ruleInstance = Same(
             value: value,
             extra: extra!,
             attribute: attribute,

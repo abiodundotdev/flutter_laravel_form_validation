@@ -17,7 +17,7 @@ class AlphaNumeric implements RuleProtocol {
     RegExp exp = RegExp(r"^[a-zA-Z0-9]+$");
     if (!exp.hasMatch(value)) {
       if (customMessage == null) {
-        return buildMessage(tryValidateStrings.alphaNum, attribute);
+        return buildMessage(ValidatorStrings.alphaNum, attribute);
       }
       return customMessage;
     }

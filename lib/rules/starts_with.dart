@@ -17,7 +17,7 @@ class StartsWith implements RuleProtocol {
   String? tryValidate() {
     if (!value.startsWith(extra)) {
       if (customMessage == null) {
-        return buildMessage(tryValidateStrings.startsWith, attribute, extra);
+        return buildMessage(ValidatorStrings.startsWith, attribute, extra);
       }
       return customMessage;
     }

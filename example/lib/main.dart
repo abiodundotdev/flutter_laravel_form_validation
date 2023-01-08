@@ -59,7 +59,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   FLValidator.required,
                   FLValidator.max(10),
                   FLValidator.email,
-                  FLValidator.uppercase
+                  FLValidator.uppercase,
+                  FLValidator.same("man")
                 ].v,
               ),
               const SizedBox(height: 10),

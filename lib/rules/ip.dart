@@ -17,7 +17,7 @@ class IpAddress implements RuleProtocol {
         multiLine: false);
     if (!exp.hasMatch(value)) {
       if (customMessage == null) {
-        return buildMessage(tryValidateStrings.ip, attribute);
+        return buildMessage(ValidatorStrings.ip, attribute);
       }
       return customMessage;
     }

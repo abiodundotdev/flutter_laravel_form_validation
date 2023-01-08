@@ -58,6 +58,13 @@ void main() {
           StartsWith(value: value, extra: "adis").tryValidate(), isA<String>());
     });
 
+    test('same right value', () {
+      expect(Same(value: value, extra: value).tryValidate(), null);
+    });
+    test('same wrong value', () {
+      expect(Same(value: value, extra: "adis").tryValidate(), isA<String>());
+    });
+
     test('upppercase with right value', () {
       expect(UpperCase(value: value.toUpperCase()).tryValidate(), null);
     });

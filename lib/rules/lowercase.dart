@@ -17,7 +17,7 @@ class LowerCase implements RuleProtocol {
   String? tryValidate() {
     if (value.toLowerCase() != value) {
       if (customMessage == null) {
-        return buildMessage(tryValidateStrings.lowercase, attribute);
+        return buildMessage(ValidatorStrings.lowercase, attribute);
       }
       return customMessage;
     }
