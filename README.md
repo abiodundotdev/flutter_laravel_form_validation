@@ -6,7 +6,7 @@ A simplified dart extension based flutter form validation . Inspired by Laravel 
 
 ```yaml
 dependencies:
-  flutter_laravel_form_validation : ^1.0.0
+  flutter_laravel_form_validation : ^1.0.3
 ```
 
 ### ⚡️ Import
@@ -102,7 +102,7 @@ import 'package:flutter_laravel_form_validation/flutter_laravel_form_validation.
             <td><code>FLValidator.between(min,max)</code></td>
             <td>between(min,max)</td>
             <td>For making sure a form field value is between the of min and max</td>
-            <td>['between:2,8'] or  'between(2,8)' or [FLValidator.between(2,8)</td>
+            <td>['between:2,8'] or  'between(2,8)' or [FLValidator.between(2,8)]</td>
         </tr>
          <tr>
             <td><code>FLValidator.max(length)</code></td>
@@ -114,103 +114,103 @@ import 'package:flutter_laravel_form_validation/flutter_laravel_form_validation.
             <td><code>FLValidator.min(length)</code></td>
             <td>min:length</td>
             <td>For making sure a form field value length is limited to the min length </td>
-            <td>['min:5'] or  'min:5' or [FLValidator.min(5)</td>
+            <td>['min:5'] or  'min:5' or [FLValidator.min(5)]</td>
         </tr>
         <tr>
             <td><code>FLValidator.gt(number)</code></td>
             <td>gt:number</td>
             <td>For making sure a form field value is greater than the number specified</td>
-            <td>['gt:10'] or  'gt:10' or [FLValidator.gt(10)</td>
+            <td>['gt:10'] or  'gt:10' or [FLValidator.gt(10)]</td>
         </tr>
         <tr>
             <td><code>FLValidator.lt(number)</code></td>
             <td>lt:number</td>
             <td>For making sure a form field value is less than the number specified</td>
-            <td>['lt:10'] or  'lt:10' or [FLValidator.lt(10)</td>
+            <td>['lt:10'] or  'lt:10' or [FLValidator.lt(10)]</td>
         </tr>
         <tr>
             <td><code>FLValidator.gte(number)</code></td>
             <td>gte:number</td>
             <td>For making sure a form field value is greater than or equal to the number specified</td>
-            <td>['gte:10'] or  'gte:10' or [FLValidator.gte(10)</td>
+            <td>['gte:10'] or  'gte:10' or [FLValidator.gte(10)]</td>
         </tr>
         <tr>
             <td><code>FLValidator.lte(number)</code></td>
             <td>lte:number</td>
             <td>For making sure a form field value is less than or equal to the number specified</td>
-            <td>['lte:10'] or  'lte:10' or [FLValidator.lte(10)</td>
+            <td>['lte:10'] or  'lte:10' or [FLValidator.lte(10)]</td>
         </tr>
         <tr>
             <td><code>FLValidator.uppercase</code></td>
             <td>uppercase</td>
             <td>For making sure a form field value is uppercase</td>
-            <td>['uppercase'] or  'uppercase' or uppercase</td>
+            <td>['uppercase'] or  'uppercase' or [FLValidator.uppercase]</td>
         </tr>
         <tr>
             <td><code>FLValidator.lowercase</code></td>
             <td>lowercase</td>
             <td>For making sure a form field value is lowercase</td>
-            <td>['lowercase'] or  'lowercase' or lowercase</td>
+            <td>['lowercase'] or  'lowercase' or [FLValidator.lowercase]</td>
         </tr>
         <tr>
             <td><code>FLValidator.startsWith(value)</code></td>
             <td>starts_with:value</td>
             <td>For making sure a form field value starts with the specified value</td>
-            <td>['starts_with:man'] or  'starts_with:man' or FLValidator.startsWith(man)</td>
+            <td>['starts_with:man'] or  'starts_with:man' or [FLValidator.startsWith(man)]</td>
         </tr>
         <tr>
             <td><code>FLValidator.endsWith(value)</code></td>
             <td>ends_with:value</td>
             <td>For making sure a form field value ends with the specified value</td>
-            <td>['ends_with:man'] or  'ends_with:man' or FLValidator.endsWith(man)</td>
+            <td>['ends_with:man'] or  'ends_with:man' or [FLValidator.endsWith(man)]</td>
         </tr>
           <tr>
             <td><code>FLValidator.same(other)</code></td>
             <td>same:other</td>
             <td>For making sure a form field value is same as <code>other<code></td>
-            <td>['same:other'] or  'same:other' or FLValidator.same(other)</td>
+            <td>['same:other'] or  'same:other' or [FLValidator.same(other)]</td>
         </tr>
         <tr>
             <td><code>FLValidator.alphaNum</code></td>
             <td>alpha_num</td>
             <td>For making sure a form field value is alpha numeric </td>
-            <td>['alpha_num'] or  'alpha_num' or FLValidator.alphaNum</td>
+            <td>['alpha_num'] or  'alpha_num' or [FLValidator.alphaNum]</td>
         </tr>
         <tr>
             <td><code>FLValidator.inItems(List items)</code></td>
             <td>in:</td>
             <td>For making sure a form field value exist in a list </td>
-            <td>['in:he,she,it'] or  'in:he,she,it' or FLValidator.inItems([he,she,it])</td>
+            <td>['in:he,she,it'] or  'in:he,she,it' or [FLValidator.inItems([he,she,it])]</td>
         </tr>
         <tr>
             <td><code>FLValidator.notInItems(List items)</code></td>
             <td>not_in:</td>
             <td>For making sure a form field value does exist in a list </td>
-            <td>['not_in:he,she,it'] or  'not_in:he,she,it' or FLValidator.notInItems([he,she,it])</td>
+            <td>['not_in:he,she,it'] or  'not_in:he,she,it' or [FLValidator.notInItems([he,she,it])]</td>
         </tr>
         <tr>
             <td><code>FLValidator.regEx(pattern)</code></td>
             <td>regex:pattern</td>
             <td>For making sure a form field value match the specified regular expression pattern</td>
-            <td>['regex:pattern'] or  'regex:pattern' or FLValidator.regEx(pattern)</td>
+            <td>['regex:pattern'] or  'regex:pattern' or [FLValidator.regEx(pattern)]</td>
         </tr>
         <tr>
             <td><code>FLValidator.email</code></td>
             <td>email</td>
             <td>For making sure a form field value is an email </td>
-            <td>['email'] or  'email' or FLValidator.email</td>
+            <td>['email'] or  'email' or [FLValidator.email]</td>
         </tr>
         <tr>
             <td><code>FLValidator.ip</code></td>
             <td>ip</td>
             <td>For making sure a form field value is an ip address</td>
-            <td>['ip'] or  'ip' or FLValidator.ip</td>
+            <td>['ip'].v or  'ip'.v or [FLValidator.ip].v</td>
         </tr>
          <tr>
             <td><code>FLValidator.url</code></td>
             <td>url</td>
             <td>For making sure a form field value is a url</td>
-            <td>['url'] or  'url' or FLValidator.url</td>
+            <td>['url'].v or  'url'.v or [FLValidator.url].v</td>
         </tr>
     </tbody>
   </table>
