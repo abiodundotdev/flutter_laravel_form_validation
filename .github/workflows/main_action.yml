@@ -39,7 +39,7 @@ jobs:
       
       - name: Get forward emails
         id: get_emails
-        run: echo "##[set-output name=emails;]$(cat "${{ env.EMAILS_FILE }}")"
+        run: echo "::set-output name=emails::$(cat "${{ env.EMAILS_FILE }}")"
         
       - name: Send mail to succesful test
         uses: dawidd6/action-send-mail@v3
@@ -49,14 +49,12 @@ jobs:
           username: ${{secrets.EMAIL_USERNAME}}
           password: ${{secrets.EMAIL_PASSWORD}}
           subject: Successfully tested and published the package
-          # Required recipients' addresses:
-          to: qudusqazeem@gmail.com,abiodundotdev@gmail.com
-          # Required sender full name (address can be skipped):
+          to: ${{steps.get_emails.outputs.emails}}
           from: Qazeem Qudus Abiodun (Package Author)
           # Optional plain body:
           body: |
-            <h1>Test Successful</h1>
-            <p>Successfully uploaded and tested the </a>.</p>
+            <h1>Test Successful and Package uploaded successfuly</h1>
+            <p>Successfully uploaded and tested the package</p>
             <p>Successfully tested </p>
             <p>You can check the update from <a href="https://pub.dev/packages/flutter_laravel_form_validation">Here</a> </p>
             <p>Regards Love</p>

@@ -1,3 +1,3 @@
-## 1.0.0
+## 1.0.4
 
-* A simplified dart extension based flutter form validation
+* Updated FLValidator Class
