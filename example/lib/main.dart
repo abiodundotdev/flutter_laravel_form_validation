@@ -61,7 +61,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   FLValidator.email,
                   FLValidator.uppercase,
                   FLValidator.same("man")
-                ].v,
+                ].validate(attribute: "Username fullname"),
               ),
               const SizedBox(height: 10),
               TextFormField(
@@ -76,7 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
               const SizedBox(height: 10),
               ElevatedButton(
                 onPressed: handleSubmit,
-                child: Text("Submit"),
+                child: const Text("Submit"),
               )
             ],
           ),
