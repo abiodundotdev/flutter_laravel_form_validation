@@ -11,9 +11,12 @@ on:
   pull_request:
     branches: [ "main" ]
 
+env:
+  EMAILS_FILE: ./forward_emails.txt
+
 jobs:
   run_test :
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v3
@@ -30,3 +33,32 @@ jobs:
 
       - name: Run tests
         run: flutter test
+      
+      #- name: Publish to pub.dev
+      #  run: flutter pub publish
+      
+      - name: Get forward emails
+        id: get_emails
+        run: echo "##[set-output name=emails;]$(cat "${{ env.EMAILS_FILE }}")"
+        
+      - name: Send mail to succesful test
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{secrets.EMAIL_USERNAME}}
+          password: ${{secrets.EMAIL_PASSWORD}}
+          subject: Successfully tested and published the package
+          # Required recipients' addresses:
+          to: qudusqazeem@gmail.com,abiodundotdev@gmail.com
+          # Required sender full name (address can be skipped):
+          from: Qazeem Qudus Abiodun (Package Author)
+          # Optional plain body:
+          body: |
+            <h1>Test Successful</h1>
+            <p>Successfully uploaded and tested the </a>.</p>
+            <p>Successfully tested </p>
+            <p>You can check the update from <a href="https://pub.dev/packages/flutter_laravel_form_validation">Here</a> </p>
+            <p>Regards Love</p>
+          
+          
