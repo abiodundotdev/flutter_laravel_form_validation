@@ -2,6 +2,7 @@
 ///Or the rule string can be used in a List sesperated with a coma as in  [required,same:man].v or in a string and seperated with | character as in 'required|same:man'.v
 ///List of supported rules can be seen on https://pub.dev/packages/flutter_laravel_form_validation#rules
 class FLValidator {
+  FLValidator._();
   //Implict
   ///Ensure a form field value is required
   static String required = "required";
