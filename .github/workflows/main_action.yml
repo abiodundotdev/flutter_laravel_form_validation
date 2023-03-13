@@ -35,8 +35,8 @@ jobs:
         id: test_output
         run: flutter test
       
-      #- name: Publish to pub.dev
-      #  run: flutter pub publish
+      - name: Publish to pub.dev
+        run: flutter pub publish
       
       - name: Get forward emails
         id: get_emails
