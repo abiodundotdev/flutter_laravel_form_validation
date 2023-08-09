@@ -6,7 +6,7 @@ A simplified dart extension based flutter form validation . Inspired by Laravel 
 
 ```yaml
 dependencies:
-  flutter_laravel_form_validation : ^1.0.5
+  flutter_laravel_form_validation : ^1.0.6
 ```
 
 ### ⚡️ Import
@@ -30,6 +30,21 @@ import 'package:flutter_laravel_form_validation/flutter_laravel_form_validation.
     TextFormField(
         validator : [FLValidator.required,FLValidator.max(10),FLValidator.uppercase].v,
     ),
+```
+
+## Custom validation in a list
+
+```dart
+    TextFormField(
+        validator : [FLValidator.required,customValidation].v,
+    ),
+
+String? customValidation(String? value) {
+  if (value == "flutterdev") {
+    return "Value cannot be flutterdev";
+  }
+  return null;
+}
 ```
 
 ## Validation rules in a string,  short form without label or custom messages
@@ -214,9 +229,9 @@ import 'package:flutter_laravel_form_validation/flutter_laravel_form_validation.
         </tr>
     </tbody>
   </table>
-
+<!-- 
 ## Additional information
-Currently working on custom rules validation, was inlcuded, but later remove flutter does not support dart reflection, another way around this is still a work in progress
+Currently working on custom rules validation, was inlcuded, but later remove flutter does not support dart reflection, another way around this is still a work in progress -->
 
 Also, localization is a work in progress
 
