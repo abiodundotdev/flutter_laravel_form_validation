@@ -6,7 +6,7 @@ A simplified dart extension based flutter form validation . Inspired by Laravel 
 
 ```yaml
 dependencies:
-  flutter_laravel_form_validation : ^1.0.4
+  flutter_laravel_form_validation : ^1.0.5
 ```
 
 ### ⚡️ Import

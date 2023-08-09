@@ -60,8 +60,15 @@ class _MyHomePageState extends State<MyHomePage> {
                   FLValidator.max(10),
                   FLValidator.email,
                   FLValidator.uppercase,
-                  FLValidator.same("man")
+                  FLValidator.same("man"),
                 ].validate(attribute: "Username fullname"),
+              ),
+              const SizedBox(height: 10),
+              TextFormField(
+                key: const Key("customval"),
+                decoration:
+                    const InputDecoration(hintText: "Custom validation"),
+                validator: [FLValidator.required, customValidation].v,
               ),
               const SizedBox(height: 10),
               TextFormField(
@@ -94,6 +101,14 @@ class _MyHomePageState extends State<MyHomePage> {
       _autoValidateMode = AutovalidateMode.always;
     }
   }
+}
+
+//FormFieldValidator
+String? customValidation(String? value) {
+  if (value == "flutterdev") {
+    return "Value cannot be flutterdev";
+  }
+  return null;
 }
 
 ///Coming soon

@@ -1,3 +1,4 @@
+import 'package:flutter/widgets.dart';
 import 'package:flutter_laravel_form_validation/rules/rules.dart';
 import 'extensions/type_alias.dart';
 
@@ -31,7 +32,7 @@ class Valiadator {
     'url'
   ];
 
-  ValidatorX make(List<Object> rules,
+  ValidatorX make(List<dynamic> rules,
       {String? attribute, Map<String, String>? customMessages}) {
     final joinedRules = [
       ...numericRules,
@@ -46,6 +47,9 @@ class Valiadator {
       String? validationMessage;
       for (var rule in rules) {
         if (validationMessage != null) return validationMessage;
+        if (rule is FormFieldValidator<String?>) {
+          return rule.call(value);
+        }
         if (rule is String) {
           final _rule = rule.split(":")[0];
           assert(joinedRules.contains(_rule),
