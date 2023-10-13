@@ -27,7 +27,4 @@ class GreaterThanOrEqual implements RuleProtocol {
     }
     return null;
   }
-
-  @override
-  RuleProtocol get instance => GreaterThanOrEqual(value: value, extra: extra);
 }

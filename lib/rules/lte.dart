@@ -27,7 +27,4 @@ class LessThanOrEqual implements RuleProtocol {
     }
     return null;
   }
-
-  @override
-  RuleProtocol get instance => LessThanOrEqual(value: value, extra: extra);
 }

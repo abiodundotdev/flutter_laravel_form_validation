@@ -20,7 +20,4 @@ class Integer implements RuleProtocol {
     }
     return null;
   }
-
-  @override
-  RuleProtocol get instance => Integer(value: value);
 }

@@ -26,7 +26,4 @@ class NotIn implements RuleProtocol {
     }
     return null;
   }
-
-  @override
-  RuleProtocol get instance => NotIn(value: value, extra: extra);
 }

@@ -24,7 +24,4 @@ class RegEx implements RuleProtocol {
     }
     return null;
   }
-
-  @override
-  RuleProtocol get instance => RegEx(value: value, extra: extra);
 }

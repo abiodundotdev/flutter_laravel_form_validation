@@ -26,7 +26,4 @@ class Max implements RuleProtocol {
     }
     return null;
   }
-
-  @override
-  RuleProtocol get instance => Max(value: value, extra: extra);
 }

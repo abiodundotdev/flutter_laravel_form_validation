@@ -23,7 +23,4 @@ class UpperCase implements RuleProtocol {
     }
     return null;
   }
-
-  @override
-  RuleProtocol get instance => UpperCase(value: value);
 }

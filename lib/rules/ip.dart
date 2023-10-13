@@ -23,7 +23,4 @@ class IpAddress implements RuleProtocol {
     }
     return null;
   }
-
-  @override
-  RuleProtocol get instance => IpAddress(value: value);
 }

@@ -23,7 +23,4 @@ class URL implements RuleProtocol {
     }
     return null;
   }
-
-  @override
-  RuleProtocol get instance => URL(value: value);
 }

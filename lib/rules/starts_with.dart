@@ -23,7 +23,4 @@ class StartsWith implements RuleProtocol {
     }
     return null;
   }
-
-  @override
-  RuleProtocol get instance => StartsWith(value: value, extra: extra);
 }

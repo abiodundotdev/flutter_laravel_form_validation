@@ -23,7 +23,4 @@ class Same implements RuleProtocol {
     }
     return null;
   }
-
-  @override
-  RuleProtocol get instance => Same(value: value, extra: extra);
 }

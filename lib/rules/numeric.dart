@@ -20,7 +20,4 @@ class Numeric implements RuleProtocol {
     }
     return null;
   }
-
-  @override
-  RuleProtocol get instance => Numeric(value: value);
 }

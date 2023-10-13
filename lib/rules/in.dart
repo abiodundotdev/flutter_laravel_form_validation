@@ -26,7 +26,4 @@ class In implements RuleProtocol {
     }
     return null;
   }
-
-  @override
-  RuleProtocol get instance => In(value: value, extra: extra);
 }

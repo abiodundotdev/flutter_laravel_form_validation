@@ -23,7 +23,4 @@ class LowerCase implements RuleProtocol {
     }
     return null;
   }
-
-  @override
-  RuleProtocol get instance => LowerCase(value: value);
 }

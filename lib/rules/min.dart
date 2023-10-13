@@ -26,7 +26,4 @@ class Min implements RuleProtocol {
     }
     return null;
   }
-
-  @override
-  RuleProtocol get instance => Min(value: value, extra: extra);
 }

@@ -18,7 +18,4 @@ class Required implements RuleProtocol {
     }
     return null;
   }
-
-  @override
-  RuleProtocol get instance => Required(value: value);
 }
