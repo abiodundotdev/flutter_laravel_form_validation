@@ -20,7 +20,4 @@ class Double implements RuleProtocol {
     }
     return null;
   }
-
-  @override
-  RuleProtocol get instance => Double(value: value);
 }

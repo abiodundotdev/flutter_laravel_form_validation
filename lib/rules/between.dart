@@ -29,7 +29,4 @@ class Between implements RuleProtocol {
     }
     return null;
   }
-
-  @override
-  RuleProtocol get instance => Between(value: value, extra: extra);
 }

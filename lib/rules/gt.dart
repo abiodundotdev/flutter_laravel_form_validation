@@ -27,7 +27,4 @@ class GreaterThan implements RuleProtocol {
     }
     return null;
   }
-
-  @override
-  RuleProtocol get instance => GreaterThan(value: value, extra: extra);
 }

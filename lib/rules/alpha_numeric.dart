@@ -23,7 +23,4 @@ class AlphaNumeric implements RuleProtocol {
     }
     return null;
   }
-
-  @override
-  RuleProtocol get instance => AlphaNumeric(value: value);
 }

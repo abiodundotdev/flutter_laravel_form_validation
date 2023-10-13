@@ -24,7 +24,4 @@ class EndsWith implements RuleProtocol {
     }
     return null;
   }
-
-  @override
-  RuleProtocol get instance => EndsWith(value: value, extra: extra);
 }

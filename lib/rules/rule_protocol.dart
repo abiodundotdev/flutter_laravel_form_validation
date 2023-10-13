@@ -4,6 +4,4 @@ abstract class RuleProtocol {
 
   ///Validates the form field value
   String? tryValidate();
-
-  RuleProtocol get instance;
 }

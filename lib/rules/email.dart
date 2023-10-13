@@ -25,7 +25,4 @@ class Email implements RuleProtocol {
     }
     return null;
   }
-
-  @override
-  RuleProtocol get instance => Email(value: value);
 }
